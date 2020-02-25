@@ -1,0 +1,53 @@
+massacre(board)
+    WHITE_1 = (0,0)
+    WHITE_2 = (0,0)
+    FROM = (0,0)
+    TO = (0,0)
+  for row in range(BOARD_SIZE):
+      for col in range(BOARD_SIZE):
+          if board[row][col] == BLACK_CHAR:
+              #search for nearest 2 WHITE_CHAR
+              i = row
+              j = col
+              n = 1
+              while WHITE_2 == (0,0)
+                for x in range (-n,n):
+                    for y in range (-n,n):
+                        if board[i+x][j+y] == WHITE_CHAR
+                            if WHITE_1 == (0,0)
+                                W1_x = i+x
+                                W2_y = j+y
+                                WHITE_1 = (W1_x,W2_y)
+                            else:
+                                W2_x = i+x
+                                W2_y = j+y
+                                WHITE_2 = (W2_x,W2_y)
+                        break
+                n += 1
+
+            #move white to BLACK_CHAR
+            while board[row][col] == BLACK_CHAR:
+                FROM = (i+x, j+y)
+                if i+x - row > 1
+                    if i+x-1 == UNOCCUPIED_CHAR
+                        i -= 1
+                    if i+x-1 == WHITE_CHAR and i+x-2 == UNOCCUPIED_CHAR
+                        i -= 2
+                elif i+x - row < -1
+                    i += 1
+                elif j+y - col > 1
+                    j -= 1
+                elif j+y - col < -1
+                    j += 1
+                TO = (i+x, j+y)
+                print(FROM->TO)
+
+                #eliminate black peice
+                if (row - W2_x) == 0
+                    if board[row][col+1] == WHITE_CHAR or board[row][col+1] == CORNER_CHAR
+                        and board[row][col-1] == WHITE_CHAR or board[row][col-1] == CORNER_CHAR
+                        board[row][col] = UNOCCUPIED_CHAR
+                elif (col - W2_y) == 0
+                    if board[row+1][col] == UNOCCUPIED_CHAR or board[row+1][col] == CORNER_CHAR
+                        board[row-1][col] == UNOCCUPIED_CHAR or board[row-1][col] == CORNER_CHAR
+                        board[row][col] = UNOCCUPIED_CHAR
